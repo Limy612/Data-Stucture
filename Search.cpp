@@ -23,8 +23,15 @@ int BinarySearch(int *a, int n, int key)
 	return 0;
 }
 
-int FibonacciSearch(int *a, int n, int key)
+int Fibonacci_Search(int *a, int n, int key)
 {
+	int low,mid,high;
+	int F[10] = {0,1,1,2,3,5,8,13,21,34};
+	
+	for(int i = 0; i <= n;)
+	{
+		i = F[i + 1];
+	}
 	return 0;
 }
 
@@ -33,7 +40,7 @@ int main()
 	int a[20] = {0,1,16,24,35,47,59,62,73,88,99};
 	int n = 11, key = 1, output;
 	//output = BinarySearch(a,n,key);
-	output = FibonacciSearch(int *a, int n, int key);
+	output = Fibonacci_Search(int *a, int n, int key);
 	
 	cout << output;
 	

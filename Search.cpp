@@ -25,24 +25,56 @@ int BinarySearch(int *a, int n, int key)
 
 int Fibonacci_Search(int *a, int n, int key)
 {
-	int low,mid,high;
+	int low,mid,high,i,k;
 	int F[10] = {0,1,1,2,3,5,8,13,21,34};
-	
-	for(int i = 0; i <= n;)
+	low = 0;
+	high = n - 1;
+	k = 0;
+		
+	while(n > F[k])   //计算n位于斐波那契数列中的位置
 	{
-		i = F[i + 1];
+		k++;
 	}
+	for(i=n; i<F[k]-1; i++) //补全斐波那契数列
+	{
+		a[i] = a[n];
+	}
+	
+		while(low <= high)
+	{
+		//cout << k << endl;
+		mid = low + F[k-1] - 1;//插值
+		cout << mid << endl;
+		if(a[mid] < key)
+		{
+			low = mid + 1;
+			k = k - 2;
+		}
+		else if(a[mid] > key)
+		{
+			high = mid - 1;
+			k = k - 1;
+		}
+		else 
+		{
+			if(mid <= n)
+				return mid;//return a[mid]
+			else
+				return n;
+		}
+	}
+
 	return 0;
 }
 
 int main()
 {
 	int a[20] = {0,1,16,24,35,47,59,62,73,88,99};
-	int n = 11, key = 1, output;
+	int n = 11, key = 73, output;
 	//output = BinarySearch(a,n,key);
-	output = Fibonacci_Search(int *a, int n, int key);
+	output = Fibonacci_Search(a,n,key);
 	
-	cout << output;
+	cout << a[output];
 	
 	return 0;
 }

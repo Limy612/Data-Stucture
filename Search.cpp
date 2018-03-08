@@ -72,7 +72,7 @@ int main()
 	int a[20] = {0,1,16,24,35,47,59,62,73,88,99};
 	int n = 11, key = 73, output;
 	//output = BinarySearch(a,n,key);
-	output = Fibonacci_Search(a,n,key);
+	//output = Fibonacci_Search(a,n,key);
 	
 	cout << a[output];
 	
